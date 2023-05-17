@@ -9,6 +9,8 @@ export const AccountSchema = new Schema(
     picture: { type: String },
     coverImage: {type: String},
     createdAt: {type: String},
+    bio: {type: String, default: "bio goes here"},
+    address: {type: String},
   },
   { timestamps: true, toJSON: { virtuals: true } }
 )
