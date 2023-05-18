@@ -10,5 +10,7 @@ export class TrailerRenter extends Messages{
         this.endDate = data.endDate
         this.cost = data.cost
         this.total = data.total
+        this.archived = data.archived
+        this.reservationCanceled = data.reservationCanceled
     }
 }
