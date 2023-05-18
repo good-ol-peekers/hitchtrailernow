@@ -6,6 +6,8 @@ export class Messages extends Profile {
         this.body = data.body
         this.createdAt = data.createdAt || new Date().toLocaleTimeString('en-US')
         this.archived = data.archived
-        this.ProfileId = data.ProfileId
+        this.parentId = data.parentId
+        this.creatorId = data.creatorId
+        this.creator = data.creator
     }
 }
