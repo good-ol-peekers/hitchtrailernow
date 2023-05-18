@@ -9,7 +9,10 @@ ownerOfTrailerAccountId: { type: Schema.Types.ObjectId, ref: 'Account'},
 trailerId: { type: Schema.Types.ObjectId, ref: 'Trailer'},
 startDate: {type: Date, required: true, minLength: 1, maxLength:5000},
 endDate: {type: Date, required: true, minLength: 1, maxLength:5000},
-totalCost: {type: String, minLength: 1, maxLength: 10000, required: true, default: "daily rate goes here"},
+cost: {type: String, minLength: 1, maxLength: 10000, required: true, default: "daily rate goes here"},
+totalCost: {type: String, minLength: 1, maxLength: 10000, required: true, default: "total cost of rental goes here"},
+archived: {type: Boolean, required: true, default: false},
+reservationCanceled: {type: Boolean, required: true, default: false},
 },
 { timestamps: true, toJSON: { virtuals: true } }
 )
