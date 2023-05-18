@@ -29,6 +29,7 @@ accountId: {type: Schema.Types.ObjectId, ref: 'Account', required: true},
 },
 { timestamps: true, toJSON: { virtuals: true } }
 )
+
 TrailerSchema.virtual('trailerOwner',{
     ref: 'Account',
     localField: 'accountId',
