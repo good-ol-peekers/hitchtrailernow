@@ -12,8 +12,8 @@ export class TrailersController extends BaseController {
     }
     async getAll(req, res, next) {
         try {
-            const trailer = await trailersService.getAll()
-            return res.send(trailer)
+            const trailers = await trailersService.getAll()
+            return res.send(trailers)
         } catch (error) {
             next(error)
         }

@@ -1,6 +1,9 @@
+import { dbContext } from "../db/DbContext"
+
 class TrailersService {
-    getAll() {
-        
+    async getAll() {
+        const trailers = await dbContext.Trailers.find()
+        return trailers
     }
 
 }
