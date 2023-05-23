@@ -17,7 +17,7 @@ export const TrailerSchema = new Schema (
     cost: {type: String, minLength:3, maxLength: 10000, default: "daily rate goes here"},
     addons: {type: String, minLength:3, maxLength: 10000, default: "addons goes here"},
     deposit: {type: String, minLength:3, maxLength: 10000, default: "deposit goes here"},
-    type: {type: String, required: true, enum:['utility', 'flatbed', 'car', 'car dolly', 'dump', 'enclosed', 'horse trailer', 'motorcycle trailer', 'cargo carrier'] },
+    type: {type: String, required: true, enum:['utility', 'flatbed', 'car', 'car dolly', 'dump', 'enclosed', 'horse trailer', 'motorcycle trailer', 'hitch cargo carrier'] },
 img1: {type: String, minLength:3, maxLength: 15000},
 img2: {type: String, minLength:3, maxLength: 15000},
 img3: {type: String, minLength:3, maxLength: 15000},
