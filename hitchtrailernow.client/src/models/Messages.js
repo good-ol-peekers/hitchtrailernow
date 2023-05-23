@@ -1,6 +1,6 @@
 import { Profile } from "./Profile.js"
 
-export class Messages extends Profile {
+export class Messages{
     constructor(data){
         this.id = data.id
         this.creatorId = data.creatorId

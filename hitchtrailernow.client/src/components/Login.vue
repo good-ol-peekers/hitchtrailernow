@@ -1,8 +1,8 @@
 <template>
-  <span class="navbar-text">
+  <span class="">
     <button class="btn selectable text-success lighten-30 text-uppercase my-2 my-lg-0" @click="login"
       v-if="!user.isAuthenticated">
-      Login
+      sign up / Login
     </button>
     <div v-else>
       <div class="dropdown dropstart my-2 my-lg-0">
