@@ -8,7 +8,18 @@ export class TrailersController extends BaseController {
         this.router
         .get('', this.getAll)
         .use(Auth0Provider.getAuthorizedUserInfo)
+        .post('', this.createTrailer)
      
+    }
+    async createTrailer(req, res, next) {
+        try {
+            let body = req.body
+            body.creatorId = req.userInfo.id
+            const trailer = await trailersService.createTrailer(body)
+            res.send(trailer)
+        } catch (error) {
+            next(error)
+        }
     }
     async getAll(req, res, next) {
         try {
