@@ -27,7 +27,7 @@ const routes = [
     name: 'Trailer',
     component: loadPage('TrailerArrayPage'),
     beforeEnter: authSettled
-  }
+  },
 ]
 
 export const router = createRouter({

@@ -4,7 +4,7 @@ import { trailersService } from "../services/TrailersService";
 
 export class TrailersController extends BaseController {
     constructor(){
-        super('trailer')
+        super('api/trailer')
         this.router
         .get('', this.getAll)
         .use(Auth0Provider.getAuthorizedUserInfo)
