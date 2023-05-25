@@ -10,5 +10,13 @@ class TrailersService {
         logger.log('trailers array data[getAllTrailers]', res.data)
         AppState.trailers = res.data.map(t => new Trailer(t))
     }
+
+   async getTrailerById(trailerId) {
+    AppState.trailer = null
+    const res = await api.get('api/trailer' + trailerId)
+    logger.log('get trailer by Id', res.data)
+    AppState.trailers = new Trailer(res.data)
+   }
+
 }
 export const trailersService = new TrailersService()

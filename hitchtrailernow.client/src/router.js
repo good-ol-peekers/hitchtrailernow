@@ -26,6 +26,12 @@ const routes = [
     path: '/trailer',
     name: 'Trailer',
     component: loadPage('TrailerArrayPage'),
+    // beforeEnter: authSettled 
+  },
+  {
+    path: '/trailer/:trailerId',
+    name: 'ActiveTrailer',
+    component: loadPage('ActiveTrailerPage'),
     beforeEnter: authSettled
   },
 ]
