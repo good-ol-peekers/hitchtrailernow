@@ -1,6 +1,5 @@
-import { TrailerRenter } from "./TrailerRenter.js"
 
- export class Trailer extends TrailerRenter{
+ export class Trailer{
     constructor(data){
         this.id = data.id
         this.archived = data.archived

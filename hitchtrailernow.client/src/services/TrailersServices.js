@@ -1,5 +1,7 @@
 import { AppState } from "../AppState"
 import { Trailer } from "../models/Trailer"
+import { logger } from "../utils/Logger"
+import { api } from "./AxiosService.js"
 
 class TrailersService {
 
