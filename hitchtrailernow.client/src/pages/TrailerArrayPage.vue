@@ -8,13 +8,13 @@
 
 <script>
 import { onMounted, computed, onUpdated } from 'vue';
-
+import { trailersServices } from '../services/TrailersServices.js'
 export default {
     setup(){
 
         async function getAllTrailers() {
             try {
-                await trailersS
+                await trailersServices.getAllTrailers()
             } catch (error) {
                 Pop.error(error, "get All Trailers")
             }
