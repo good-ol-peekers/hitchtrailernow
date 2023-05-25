@@ -1,4 +1,3 @@
-import { Profile } from "./Profile.js"
 
 export class Messages{
     constructor(data){
