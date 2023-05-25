@@ -1,6 +1,5 @@
-import { Messages } from "./Messages.js";
 
-export class TrailerRenter extends Messages{
+export class TrailerRenter{
     constructor(data){
         this.id = data.id
         this.trailerId = data.trailerId
