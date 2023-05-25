@@ -11,13 +11,13 @@ import { TrailerRenterSchema } from '../models/TrailerRenter';
 class DbContext {
   Values = mongoose.model('Value', ValueSchema);
   Account = mongoose.model('Account', AccountSchema);
-  Profile = mongoose.model('Profile', ProfileSchema);
+  Profiles = mongoose.model('Profile', ProfileSchema);
 
   Trailers = mongoose.model('Trailer', TrailerSchema);
   Messages = mongoose.model('Message', MessagesSchema);
   MyBookedRentals = mongoose.model('MyBookedRental', MyBookedRentalsSchema);
 
-  OwnerOfTrailer = mongoose.model('OwnerOfTrailer', OwnerOfTrailerSchema);
+  OwnerOfTrailers = mongoose.model('OwnerOfTrailer', OwnerOfTrailerSchema);
   TrailerRenters = mongoose.model('TrailerRenter', TrailerRenterSchema);
 
 }
