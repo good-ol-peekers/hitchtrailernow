@@ -7,9 +7,19 @@ export class TrailersController extends BaseController {
         super('api/trailer')
         this.router
         .get('', this.getAll)
+        .get('/:trailerId', this.getTrailerById)
         .use(Auth0Provider.getAuthorizedUserInfo)
         .post('', this.createTrailer)
      
+    }
+    async getTrailerById(req, res, next) {
+        try {
+            const trailerId = req.params.trailerId
+            const trailer = await trailersService.getTrailerById(trailerId)
+            res.send(trailer)
+            } catch (error) {
+            next(error)
+        }
     }
     async createTrailer(req, res, next) {
         try {

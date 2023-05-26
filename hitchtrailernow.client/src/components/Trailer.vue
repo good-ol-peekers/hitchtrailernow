@@ -1,8 +1,12 @@
 <template>
     <div class="row">
         <div class="col-6">
+            <router-link :to="{ name: 'Trailer', params: { trailerId: trailer.id} }">
+                <img src="image source" class="img-fluid rounded-top" alt="trailer img here">
+            </router-link>
+    
             <div>
-                <h1>{{ trailer.addons }}</h1>
+                <h1>{{ trailer.id }}</h1>
                 <!-- <img :src="" alt=""> -->
             </div>
         </div>

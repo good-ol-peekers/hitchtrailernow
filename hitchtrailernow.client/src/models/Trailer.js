@@ -1,3 +1,4 @@
+import { Profile } from "./Profile"
 
  export class Trailer{
     constructor(data){
@@ -25,5 +26,12 @@
         this.img6 = data.img6
         this.img7 = data.img7
         this.accountId = data.accountId
+    }
+}
+export class trailerOwner extends Trailer {
+    constructor(data){
+        super(data.profile)
+        this.profile = new Profile(data.profile)
+        this.accountId = this.accountId
     }
 }
