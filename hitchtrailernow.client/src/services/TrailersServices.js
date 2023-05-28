@@ -13,9 +13,9 @@ class TrailersService {
 
    async getTrailerById(trailerId) {
     AppState.trailer = null
-    const res = await api.get('api/trailer' + trailerId)
+    const res = await api.get('api/trailer/' + trailerId)
     logger.log('get trailer by Id', res.data)
-    AppState.trailers = new Trailer(res.data)
+    AppState.trailer = new Trailer(res.data)
    }
 
 }

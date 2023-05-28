@@ -1,16 +1,22 @@
 <template>
     <div class="">
 <h1>this is the active trailer page</h1>
-
+<h1>trailer details</h1>
+<h1>{{ trailer.capacity }} capacity</h1>
+    </div>
+    <div>
+        <h1>trailer owner here</h1>
+        <h1>{{ trailer.trailerOwner.email }}</h1>
     </div>
 </template>
 
 
 <script>
-import { watchEffect } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import { computed, watchEffect } from 'vue';
 import { trailersService } from '../services/TrailersServices';
 import Pop from '../utils/Pop';
-Pop
+import { AppState } from '../AppState';
 
 export default {
     setup(){
@@ -21,6 +27,7 @@ export default {
             try {
                 const trailerId = route.params.trailerId
                 await trailersService.getTrailerById(trailerId)
+                console.log(trailerId)
             } catch (error) {
                 Pop.error(error.message, 'getTrailerById')
                 router.push('/')
@@ -29,11 +36,13 @@ export default {
 
         watchEffect(() => {
             if(route.params.trailerId){
-                getTrailerById()
-            }
+                getTrailerById();
+            };
         })
 
-        return {}
+        return {
+            activeTrailer: computed(() => AppState.trailer),
+        }
     }
 }
 </script>

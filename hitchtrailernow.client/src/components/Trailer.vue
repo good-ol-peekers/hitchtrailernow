@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-6">
-            <router-link :to="{ name: 'Trailer', params: { trailerId: trailer.id} }">
+            <router-link class="selectable" :to="{ name: 'ActiveTrailer', params: { trailerId: trailer.id} }">
                 <img src="image source" class="img-fluid rounded-top" alt="trailer img here">
             </router-link>
     
