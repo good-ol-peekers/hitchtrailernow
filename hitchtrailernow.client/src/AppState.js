@@ -8,5 +8,7 @@ export const AppState = reactive({
    /** @type {import('./models/Trailer.js').Trailer} */
   trailers: [],
    /** @type {import('./models/Trailer.js').Trailer} */
-  trailer: null
+  trailer: null,
+     /** @type {import('./models/Trailer.js').Trailer} */
+  newTrailer: null
 })

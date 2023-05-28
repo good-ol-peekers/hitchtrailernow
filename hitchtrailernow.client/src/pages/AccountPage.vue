@@ -9,7 +9,7 @@
       <div class="col-md-6">
         <form @submit.prevent="createTrailerListing()">
           <div>
-            <label for="title" class="form-label">Title</label>
+            <label for="title" class="form-label">Introduction-Title</label>
             <input v-model="editable.title" required type="text" class="form-control" name="title" id="title"
             aria-describedby="enter Title ">
           </div>
@@ -117,6 +117,9 @@
                   <option value="hitch cargo carrier">Hitch Cargo Carrier / RoofTop Box</option>
                 </select>
               </div>
+              <div>
+                <button class="btn btn-outline-success" type="submit"> Create Trailer Listing </button>
+              </div>
         </form>
       </div>
     </div>
@@ -125,14 +128,40 @@
 </template>
 
 <script>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { AppState } from '../AppState'
+import { trailersService } from '../services/TrailersServices';
+import { router } from '../router';
+import Pop from '../utils/Pop';
 export default {
   setup() {
+
+    const category = ref('')
+    const editable = ref({ type: 'description' });
+
+
+
     return {
-      account: computed(() => AppState.account)
+      editable,
+      trailer: computed(() => {
+        if(!category.value){
+          return AppState.trailer
+        };
+      }),
+      account: computed(() => AppState.account),
+      newTrailer: computed(() => AppState.newTrailer),
     }
+  },
+    async createTrailerListing(){
+  try {
+    const formData = editable.value
+    let newTrailer = await trailersService.createTrailerListing(formData)
+    editable.value = {}
+    router.push({ name: 'ActiveTrailer', params: { trailerId: newTrailer.id } })
+  } catch (error) {
+    Pop.error(error.message)
   }
+}
 }
 </script>
 
